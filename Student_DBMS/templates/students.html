@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between mb-3">
+    <h3>Student Records</h3>
+    <form class="d-flex" method="GET">
+        <input name="search" class="form-control me-2" placeholder="Search Roll/Name">
+        <button class="btn btn-primary">Search</button>
+    </form>
+    <a href="{{ url_for('add_student') }}" class="btn btn-success">Add New</a>
+</div>
+<table class="table table-white table-hover shadow-sm">
+    <thead class="table-dark">
+        <tr><th>Roll No</th><th>Name</th><th>Course</th><th>Marks</th></tr>
+    </thead>
+    <tbody>
+        {% for s in students %}
+        <tr><td>{{s.roll_no}}</td><td>{{s.name}}</td><td>{{s.course}}</td><td>{{s.marks}}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

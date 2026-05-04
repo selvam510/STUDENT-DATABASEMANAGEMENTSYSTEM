@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Welcome Admin</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card p-4 bg-primary text-white">
+            <h5>Total Students</h5>
+            <h1>{{ total }}</h1>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 bg-success text-white">
+            <h5>Class Average</h5>
+            <h1>{{ avg }}%</h1>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h5>Actions</h5>
+            <a href="{{ url_for('export_excel') }}" class="btn btn-outline-primary mt-2 w-100">Download Excel Report</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
